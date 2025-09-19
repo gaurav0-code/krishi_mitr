@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>KRISHIMITR – Complete Offline Farming Platform</title>
+
+
+    <meta name="theme-color" content="#2d7a2d">
+    <meta name="description" content="KRISHIMITR - Complete offline farming advisory app">
+    <link rel="manifest"
+        href="data:application/json;base64,ewogICJuYW1lIjogIktSSVNISU1JVFIiLAogICJzaG9ydF9uYW1lIjogIktSSVNISU1JVFIiLAogICJkZXNjcmlwdGlvbiI6ICJDb21wbGV0ZSBvZmZsaW5lIGZhcm1pbmcgYWR2aXNvcnkgYXBwIiwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMyZDdhMmQiLAogICJ0aGVtZV9jb2xvciI6ICIjMmQ3YTJkIiwKICAiaWNvbnMiOiBbCiAgICB7CiAgICAgICJzcmMiOiAiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCcFpEMGlhV052Ym1raUlIWnBaWGRDYjNnOUlqQWdNQ0EwT0NjME9DSWlJSGRwWkhSb1BTSTBPQ0lpSUdobGFXZG9kRDBpTkRnaUlHWnBiR3c5SWlNM1pHVXlZVGNpSUhodGJHNXpQU0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh5TURBd0wzTjJaeUkrUEVOcGNtTnNaU0JqZUQwaU1qUWlJR041UFNJOS0kMk4RLyIsdHlwZSI6ImltYWdlL3N2Zyt4bWwiLCJzaXplcyI6IjQ4eDQ4In0KICBdCn0=">
+
+    <link rel="stylesheet" href="krishimitr.main.css">
+</head>
+
+<body>
+
+    <div id="connectivityBanner" class="connectivity-banner">
+        <span id="connectivityMessage">Checking connection...</span>
+    </div>
+
+
+    <div id="syncStatus" class="sync-status">
+        <div id="syncIndicator" class="sync-indicator"></div>
+        <span id="syncMessage">Synced</span>
+    </div>
+
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+
+            <div class="auth-tabs">
+                <div class="auth-tab active" data-tab="login">
+                    <span data-text="login">Login</span>
+                </div>
+                <div class="auth-tab" data-tab="signup">
+                    <span data-text="signup">Sign Up</span>
+                </div>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginForm" class="auth-form">
+                <h3 data-text="welcome_back">Welcome Back!</h3>
+                <form id="loginFormElement">
+                    <div class="form-group">
+                        <label data-text="email_phone">Email or Phone:</label>
+                        <input type="text" id="loginIdentifier" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-text="password">Password:</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;" data-text="login">Login</button>
+                </form>
+            </div>
+            <!-- Signup Form -->
+            <div id="signupForm" class="auth-form hidden">
+                <h3 data-text="create_account">Create Account</h3>
+                <form id="signupFormElement">
+                    <div class="form-group">
+                        <label data-text="full_name">Full Name:</label>
+                        <input type="text" id="signupName" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-text="email">Email:</label>
+                        <input type="email" id="signupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-text="phone">Phone Number:</label>
+                        <input type="tel" id="signupPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-text="location">Location:</label>
+                        <input type="text" id="signupLocation" placeholder="City, State" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-text="farm_size">Farm Size (acres):</label>
+                        <input type="number" id="signupFarmSize" step="0.1" min="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label data-text="primary_crop">Primary Crop:</label>
+                        <select id="signupCrop" required>
+                            <option value="">Select Crop</option>
+                            <option value="wheat">Wheat / गेहूं / ਕਣਕ</option>
+                            <option value="rice">Rice / चावल / ਚਾਵਲ</option>
+                            <option value="maize">Maize / मक्का / ਮੱਕੀ</option>
+                            <option value="cotton">Cotton / कपास / ਕਪਾਹ</option>
+                            <option value="sugarcane">Sugarcane / गन्ना / ਗੰਨਾ</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-text="preferred_language">Preferred Language:</label>
+                        <select id="signupLanguage" required>
+                            <option value="en">English</option>
+                            <option value="hi">हिन्दी (Hindi)</option>
+                            <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-text="password">Password:</label>
+                        <input type="password" id="signupPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label data-text="confirm_password">Confirm Password:</label>
+                        <input type="password" id="signupConfirmPassword" required>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;" data-text="create_account">Create
+                        Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="title">
+                <div class="logo"></div>
+                <div>
+                    <div style="font-weight:700;font-size:24px;color:var(--primary)" data-text="app_title">KRISHIMITR
+                    </div>
+                    <div class="muted" style="font-size:14px" data-text="app_subtitle">Complete • Offline • Voice •
+                        Weather • Mandi</div>
+                </div>
+            </div>
+
+            <div class="user-section">
+                <div class="language-selector">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="hi">हि</button>
+                    <button class="lang-btn" data-lang="pa">ਪੰ</button>
+                </div>
+                <div id="userInfo" class="user-info hidden">
+                    <div class="user-avatar" id="userAvatar">U</div>
+                    <div>
+                        <div id="userName" style="font-size: 14px; font-weight: 500;"></div>
+                        <div class="muted" style="font-size: 11px;" id="userLocation"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="authBtn" class="btn-primary" data-text="login">Login</button>
+                    <button id="logoutBtn" class="btn-danger hidden" data-text="logout">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <div id="dataUsage" class="data-usage hidden">
+            <span>Data saved today: <strong id="dataSaved">0 KB</strong></span>
+            <span>Cache size: <strong id="cacheSize">0 MB</strong></span>
+        </div>
+
+        <div class="grid">
+            <!--  Chatbot   -->
+            <section class="card chat">
+                <div class="card-header">
+                    <h3 data-text="advisory_chatbot">Advisory Chatbot</h3>
+                    <div class="row">
+                        <button id="micBtn" class="pill" title="Voice input">🎤</button>
+                        <button id="speakBtn" class="pill" title="Read response">🔈</button>
+                        <button id="offlineToggle" class="pill" title="Offline mode">📱</button>
+                    </div>
+                </div>
+                <div id="chatLog" class="chat-log"></div>
+                <div class="chat-input">
+                    <input id="chatInput" class="input" data-placeholder="ask_about_crops"
+                        placeholder="Ask about crops, disease, fertilizer, weather…" />
+                    <button id="sendBtn" class="btn-primary" data-text="send">Send</button>
+                </div>
+                <!-- Voice Status Indicator -->
+                <div class="voice-status">
+                    <div class="voice-indicator" id="voiceIndicator"></div>
+                    <span id="voiceStatus">Checking voice support...</span>
+                </div>
+            </section>
+
+            <section class="panel">
+                <!-- Weather & Alerts[we used WEATHER API here] -->
+                <div class="card" id="weatherCard">
+                    <div class="card-header">
+                        <h3 data-text="weather_alerts">Weather & Alerts</h3>
+                        <button id="refreshWx" class="pill">↻</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" style="gap:12px">
+                            <input id="locationInput" class="input" data-placeholder="village_city"
+                                placeholder="Village / City (optional)" />
+                            <button id="useGPS" class="btn-ghost" data-text="use_gps">📍 Use GPS</button>
+                        </div>
+                        <div id="weatherStatus" class="weather-status hidden"></div>
+                        <div id="wx" class="muted" style="margin-top:10px" data-text="no_weather_data">No data yet.
+                            Click "Use GPS" or enter a place.</div>
+                        <ul id="alerts" style="margin-top:10px; padding-left:16px"></ul>
+                        <div id="forecast" style="margin-top:10px"></div>
+                    </div>
+                </div>
+
+                <!-- Mandi Prices[we used LIVE MANDI DATA FETCHING API ] -->
+                <div class="card" id="mandiCard">
+                    <div class="card-header">
+                        <h3 data-text="mandi_prices">Mandi Prices (Live Data)</h3>
+                        <button id="refreshMandi" class="pill">↻</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="row" style="gap:12px">
+                            <select id="cropSelect"></select>
+                            <select id="stateSelect"></select>
+                        </div>
+                        <div id="mandiStatus" class="mandi-status hidden"></div>
+                        <div style="overflow-x: auto;">
+                            <table class="table" style="margin-top:10px">
+                                <thead>
+                                    <tr>
+                                        <th data-text="commodity">Commodity</th>
+                                        <th data-text="market">Market</th>
+                                        <th data-text="min_price">Min ₹</th>
+                                        <th data-text="max_price">Max ₹</th>
+                                        <th data-text="modal_price">Modal ₹</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="mandiBody"></tbody>
+                            </table>
+                        </div>
+                        <div class="muted" style="margin-top:8px;font-size:11px" data-text="live_data_info">Real-time
+                            data from multiple sources • Prices in ₹/quintal</div>
+                    </div>
+                </div>
+
+                <!-- Soil & Roadmap[This is just an input string for a dummy model this may contains complex inputs, but for the main model, we are working on the AI/ML project, which will work similarly to pest detection.] -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 data-text="soil_crop_roadmap">Soil & Crop Roadmap</h3>
+                    </div>
+                    <div class="card-body">
+                        <div
+                            style="display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:8px;margin-bottom:10px">
+                            <select id="soilType" class="input">
+                                <option value="loam">Loam</option>
+                                <option value="clay">Clay</option>
+                                <option value="sandy">Sandy</option>
+                                <option value="silty">Silty</option>
+                                <option value="peaty">Peaty</option>
+                                <option value="chalky">Chalky</option>
+                            </select>
+                            <input id="soilPH" class="input" type="number" step="0.1" placeholder="pH" />
+                            <input id="soilN" class="input" type="number" placeholder="N" />
+                            <input id="soilP" class="input" type="number" placeholder="P" />
+                            <input id="soilK" class="input" type="number" placeholder="K" />
+                        </div>
+
+                        <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+                            <select id="cropSelectRoadmap" class="input">
+                                <option value="wheat">Wheat</option>
+                                <option value="rice">Rice</option>
+                                <option value="maize">Maize</option>
+                                <option value="cotton">Cotton</option>
+                            </select>
+                            <input type="date" id="sowingDate" class="input" />
+                        </div>
+
+                        <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+                            <button id="recommendBtn" class="btn-primary" data-text="soil_recommend">Soil
+                                Recommend</button>
+                            <button id="generateRoadmap" class="btn-primary" data-text="generate_roadmap">Generate
+                                Roadmap</button>
+                        </div>
+
+                        <div id="recommendation" style="margin-top:10px" class="muted" data-text="fill_soil_info">Fill
+                            the soil info to get crop & fertilizer suggestions.</div>
+                        <hr style="border-color:var(--border)" />
+                        <div id="roadmapOutput" class="roadmap-container" style="margin-top:10px"></div>
+                    </div>
+                </div>
+
+                <!-- Pest/Disease Detection [It's a dummy mode that provides accurate or non-reasonable  answers, but for the final project, the full AI/ML project is coming]-->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 data-text="pest_disease_check">Pest / Disease Check</h3>
+                    </div>
+                    <div class="card-body">
+                        <input id="imgInput" type="file" accept="image/*" />
+                        <img id="imgPreview" class="img-preview hidden" alt="preview" />
+                        <div class="row" style="margin-top:8px">
+                            <button id="detectBtn" class="btn-primary" data-text="analyze_image">Analyze Image</button>
+                            <span id="detectStatus" class="muted"></span>
+                        </div>
+                        <div id="detectResult" style="margin-top:8px"></div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="profile-panel">
+                <div class="profile-header">
+                    <div class="profile-avatar" id="profileAvatar">U</div>
+                    <h3 id="profileName" data-text="guest_user">Guest User</h3>
+                    <div class="muted" id="profileEmail"></div>
+                </div>
+
+                <div class="profile-info">
+                    <div class="profile-item">
+                        <span data-text="location">Location:</span>
+                        <span id="profileLocation" class="muted">-</span>
+                    </div>
+                    <div class="profile-item">
+                        <span data-text="farm_size">Farm Size:</span>
+                        <span id="profileFarmSize" class="muted">-</span>
+                    </div>
+                    <div class="profile-item">
+                        <span data-text="primary_crop">Primary Crop:</span>
+                        <span id="profileCrop" class="muted">-</span>
+                    </div>
+                    <div class="profile-item">
+                        <span data-text="member_since">Member Since:</span>
+                        <span id="profileJoinDate" class="muted">-</span>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="chatCount">0</div>
+                            <div class="stat-label" data-text="chat_queries">Chat Queries</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="weatherChecks">0</div>
+                            <div class="stat-label" data-text="weather_checks">Weather Checks</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="mandiChecks">0</div>
+                            <div class="stat-label" data-text="mandi_checks">Mandi Checks</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="roadmapsGenerated">0</div>
+                            <div class="stat-label" data-text="roadmaps_generated">Roadmaps</div>
+                        </div>
+                    </div>
+
+                    <button id="editProfileBtn" class="btn-primary" style="width: 100%; margin-top: 16px;"
+                        data-text="edit_profile">Edit Profile</button>
+                </div>
+            </section>
+        </div>
+
+        <div class="footer">
+            <strong data-text="status">Status:</strong>
+            <span id="appStatus">✅ All systems operational</span>
+        </div>
+    </div>
+    <script src="krishimitr.main.js"></script>
+
+</body>
+
+</html>
