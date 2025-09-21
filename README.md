@@ -19,6 +19,6 @@ This README provides an overview of the project, including team details, relevan
 ## Project Links  
 - **SIH Presentation** : [Final SIH Presentation](https://github.com/gaurav0-code/KrishiMitra/blob/main/SIH2025-IDEA-Presentation-Format.pdf)  
 - **Video Demonstration** : [Watch Video](UNLISTED YOUTUBE LINK)  
-- **Live Deployment** : [View Deployment](DEPLOYED LINK IF ANY)  
+- **Live Deployment** : [View Deployment](https://krishi-mitr-5x36.vercel.app/)  
 - **Source Code** : [GitHub Repository](https://github.com/gaurav0-code/KrishiMitra/tree/main/code)  
 - **Additional Resources** : [Other Relevant Links](ANY OTHER RELEVANT LINKS)
