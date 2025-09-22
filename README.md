@@ -17,7 +17,7 @@ This README provides an overview of the project, including team details, relevan
 - **SARISHA JHINGAN** - 2025UCD2101 - [@sar-isha07](https://github.com/sar-isha07)  
 
 ## Project Links  
-- **SIH Presentation** : [Final SIH Presentation](https://github.com/gaurav0-code/KrishiMitra/blob/main/SIH2025-IDEA-Presentation-Format.pdf)  
+- **SIH Presentation** : [Final SIH Presentation](https://github.com/gaurav0-code/krishi_mitr/blob/main/files/SIH2025-IDEA-Presentation-Format.pdf)  
 - **Video Demonstration** : [Watch Video](https://www.youtube.com/watch?v=ekRsvg6Eg70)  
 - **Live Deployment** : [View Deployment](https://krishi-mitr-5x36.vercel.app/)  
 - **Source Code** : [GitHub Repository](https://github.com/gaurav0-code/KrishiMitra/tree/main/code)  
