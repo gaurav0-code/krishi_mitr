@@ -1,27 +1,24 @@
-## Tasks Accomplished
+# KrishiMitra
 
-- [x] *Task 1:* Developed a secure login page for user authentication.
-- [x] *Task 2:* Made a chatbot that can speak and take input on voice, and can take information from other sections of the website.
-- [x] *Task 3:* Enabled offline caching.
-- [x] *Task 4:* Integrated real-time weather and mandi market APIs for agri data.
-- [x] *Task 5:* Made a website that can be multilingual.
+This README provides an overview of the project, including team details, relevant links, tasks completed, tech stack, key features, and steps to run the project locally.
 
-## Technology Stack
 
-This project leverages the following technologies:
+## Team Name: DATA DEMONS
 
-- **[HTML/CSS/JAVASCRIPT](https://developer.mozilla.org/en-US/docs/Web):** They are nessary for building website due to their fundamental roles in creating interactive and visually appealing websites.
-- **[VERCEL](https://vercel.com/)** For live web deployment and this can easily helps us to make a deployment.
-- **[Weather API](https://openweathermap.org/api)** Fetches live weather data for farmers.
-- **[Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)** Used for capturing voice input (speech-to-text) and providing voice output (text-to-speech) directly in the browser.
-- **[Local Storage & IndexedDB](http://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)** Used to securely save user data, login session, and app content on the user’s device for offline access.
+**Team Leader**: [@gaurav0-code](https://github.com/gaurav0-code)
 
-## Key Features
+**Team Members:**
 
-- *Simple UI and clean interface:* Our project comes with a very simple UI and interface so that anyone can handel it.
-- *Live dashboard:* Real-time weather,alerts on basic of weather & mandi price updates.
-- *AI pest detection:* Instant analysis of crop pest photos.
-- *Offline-ready:* Caches data and auto-fills when network is poor.
-- *Multi-linual:* It comes with three different language.
-- *Chat-bot:* Chat-bot which can talk in different language and can take voice input.
-- *Farming Roadmap and Crop recommendation:* It provides a detailed farming plan based on the chosen crop and a tool that suggests suitable crops from given inputs.
+- **GAURAV** - 2025UIT3037 - [@gaurav0-code](https://github.com/gaurav0-code)  
+- **PANKAJ SINGH** - 2025UIT3037 - [@White-coder-PS](https://github.com/white-coder-PS)  
+- **SURAJ SHARMA** - 2025UEC2589 - [@phenonix-stack](https://github.com/phenonix-stack)  
+- **VANSHIKA** - 2925UCD2163 - [@vaanya11](https://github.com/vaanya11)  
+- **SARANSH BANSAL** - 2025UCD2155 - [@samshere12](https://github.com/samshere12)   
+- **SARISHA JHINGAN** - 2025UCD2101 - [@sar-isha07](https://github.com/sar-isha07)  
+
+## Project Links  
+- **SIH Presentation** : [Final SIH Presentation](https://github.com/gaurav0-code/KrishiMitra/blob/main/SIH2025-IDEA-Presentation-Format.pdf)  
+- **Video Demonstration** : [Watch Video](UNLISTED YOUTUBE LINK)  
+- **Live Deployment** : [View Deployment](DEPLOYED LINK IF ANY)  
+- **Source Code** : [GitHub Repository](https://github.com/gaurav0-code/KrishiMitra/tree/main/code)  
+- **Additional Resources** : [Other Relevant Links](ANY OTHER RELEVANT LINKS)
