@@ -1,8 +1,3 @@
-# KrishiMitra
-
-This README provides an overview of the project, including team details, relevant links, tasks completed, tech stack, key features, and steps to run the project locally.
-
-
 ## Team Name: DATA DEMONS
 
 **Team Leader**: [@gaurav0-code](https://github.com/gaurav0-code)
@@ -10,7 +5,7 @@ This README provides an overview of the project, including team details, relevan
 **Team Members:**
 
 - **GAURAV** - 2025UIT3037 - [@gaurav0-code](https://github.com/gaurav0-code)  
-- **PANKAJ SINGH** - 2025UIT3037 - [@White-coder-PS](https://github.com/white-coder-PS)  
+- **PANKAJ SINGH** - 2025UIT3036 - [@White-coder-PS](https://github.com/white-coder-PS)  
 - **SURAJ SHARMA** - 2025UEC2589 - [@phenonix-stack](https://github.com/phenonix-stack)  
 - **VANSHIKA** - 2925UCD2163 - [@vaanya11](https://github.com/vaanya11)  
 - **SARANSH BANSAL** - 2025UCD2155 - [@samshere12](https://github.com/samshere12)   
@@ -18,7 +13,9 @@ This README provides an overview of the project, including team details, relevan
 
 ## Project Links  
 - **SIH Presentation** : [Final SIH Presentation](https://github.com/gaurav0-code/KrishiMitra/blob/main/SIH2025-IDEA-Presentation-Format.pdf)  
-- **Video Demonstration** : [Watch Video](UNLISTED YOUTUBE LINK)  
-- **Live Deployment** : [View Deployment](DEPLOYED LINK IF ANY)  
+- **Video Demonstration** : [Watch Video](https://www.youtube.com/watch?v=ekRsvg6Eg70)  
+- **Live Deployment** : [View Deployment](https://krishi-mitr-5x36.vercel.app/)  
 - **Source Code** : [GitHub Repository](https://github.com/gaurav0-code/KrishiMitra/tree/main/code)  
-- **Additional Resources** : [Other Relevant Links](ANY OTHER RELEVANT LINKS)
+- **Open Weather API** : [OpenWeather API Documentation](https://openweathermap.org/api)
+- **Dataset Source** : [Dcumentation](https://www.data.gov.in/catalog/current-daily-price-various-commodities-various-markets-mandi)
+
